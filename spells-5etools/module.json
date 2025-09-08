@@ -1,0 +1,34 @@
+{
+  "id": "spells-5etools",
+  "title": "Spells (5etools)",
+  "description": "Compendium of D&D 5e spells generated from 5etools JSON",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "12"
+  },
+  "authors": [
+    {
+      "name": "Rufino-BR"
+    }
+  ],
+  "url": "https://github.com/Rufino-BR/spells5etools",
+  "manifest": "https://raw.githubusercontent.com/Rufino-BR/spells5etools/main/spells-5etools/module.json",
+  "download": "https://github.com/Rufino-BR/spells5etools/archive/refs/heads/main.zip",
+  "packs": [
+    {
+      "name": "spells-5etools",
+      "label": "Spells (5etools)",
+      "path": "packs/spells-5etools.db",
+      "type": "Item",
+      "system": "dnd5e"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e"
+      }
+    ]
+  }
+}

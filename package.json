@@ -1,0 +1,17 @@
+{
+  "name": "spells-5etools-generator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-spells.js",
+    "clean": "rm -rf spells-5etools"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.5",
+    "fs-extra": "^11.2.0",
+    "node-fetch": "^3.3.2"
+  }
+}
+
+

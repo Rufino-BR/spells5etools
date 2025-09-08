@@ -1,0 +1,83 @@
+[
+  {
+    "_id": "fireball-001",
+    "name": "Fireball",
+    "type": "spell",
+    "img": "icons/magic/fire/explosion-fire-large.webp",
+    "system": {
+      "description": {
+        "value": "<p>A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A target takes {@damage 8d6} fire damage on a failed save, or half as much damage on a successful one.</p><p>The fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried.</p>"
+      },
+      "level": 3,
+      "school": "evocation",
+      "preparation": {
+        "mode": "prepared",
+        "prepared": false
+      },
+      "components": {
+        "value": "vsm",
+        "vocal": true,
+        "somatic": true,
+        "material": true,
+        "ritual": false
+      },
+      "materials": {
+        "value": "a tiny ball of bat guano and sulfur"
+      }
+    }
+  },
+  {
+    "_id": "heal-001",
+    "name": "Heal",
+    "type": "spell",
+    "img": "icons/magic/healing/bandage-wrapped-staff-gold.webp",
+    "system": {
+      "description": {
+        "value": "<p>Choose a creature that you can see within range. A surge of positive energy washes through the creature, causing it to regain 70 hit points. This spell also ends {@condition blinded||blindness}, {@condition deafened||deafness}, and any diseases affecting the target. This spell has no effect on constructs or undead.</p>"
+      },
+      "level": 6,
+      "school": "evocation",
+      "preparation": {
+        "mode": "prepared",
+        "prepared": false
+      },
+      "components": {
+        "value": "vs",
+        "vocal": true,
+        "somatic": true,
+        "material": false,
+        "ritual": false
+      },
+      "materials": {
+        "value": ""
+      }
+    }
+  },
+  {
+    "_id": "magic-missile-001",
+    "name": "Magic Missile",
+    "type": "spell",
+    "img": "icons/magic/light/energy-bolt-blue.webp",
+    "system": {
+      "description": {
+        "value": "<p>You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals {@damage 1d4 + 1} force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several.</p>"
+      },
+      "level": 1,
+      "school": "evocation",
+      "preparation": {
+        "mode": "prepared",
+        "prepared": false
+      },
+      "components": {
+        "value": "vs",
+        "vocal": true,
+        "somatic": true,
+        "material": false,
+        "ritual": false
+      },
+      "materials": {
+        "value": ""
+      }
+    }
+  }
+]

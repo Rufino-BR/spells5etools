@@ -16,7 +16,7 @@
     {
       "name": "spells-5etools",
       "label": "Spells (5etools)",
-      "path": "packs/spells-5etools.db",
+      "path": "packs/spells-5etools.json",
       "type": "Item",
       "system": "dnd5e"
     }

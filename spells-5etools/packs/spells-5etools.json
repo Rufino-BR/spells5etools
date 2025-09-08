@@ -1,0 +1,330 @@
+[
+  {
+    "_id": "fireball",
+    "name": "Fireball",
+    "type": "spell",
+    "img": "icons/magic/fire/projectile-magic-flame-burst.webp",
+    "system": {
+      "description": {
+        "value": "<p>Uma esfera brilhante de fogo voa do seu dedo para um ponto escolhido dentro do alcance e então explode com um estrondo ensurdecedor. Cada criatura em uma esfera de 6 metros de raio centrada nesse ponto deve fazer um teste de resistência de Destreza. Uma criatura sofre 8d6 de dano de fogo se falhar no teste, ou metade desse dano se obtiver sucesso.</p>",
+        "chat": "",
+        "unidentified": ""
+      },
+      "source": "PHB",
+      "level": 3,
+      "school": "evo",
+      "components": {
+        "value": "VSM",
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "ritual": false,
+        "concentration": false
+      },
+      "materials": {
+        "value": "uma pequena bola de guano de morcego e enxofre",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "preparation": {
+        "mode": "prepared",
+        "prepared": false
+      },
+      "scaling": {
+        "mode": "level",
+        "formula": "1d6"
+      },
+      "duration": {
+        "value": "",
+        "unit": "inst"
+      },
+      "range": {
+        "value": 150,
+        "long": null,
+        "units": "ft"
+      },
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": ""
+      },
+      "consume": {
+        "type": "",
+        "target": null,
+        "amount": null
+      },
+      "ability": "",
+      "actionType": "save",
+      "attackBonus": "",
+      "chatFlavor": "",
+      "critical": {
+        "threshold": null,
+        "damage": ""
+      },
+      "damage": {
+        "parts": [
+          [
+            "8d6",
+            "fire"
+          ]
+        ],
+        "versatile": ""
+      },
+      "formula": "",
+      "save": {
+        "ability": "dex",
+        "dc": null,
+        "scaling": "spell"
+      },
+      "type": {
+        "value": "save",
+        "subtype": ""
+      },
+      "target": {
+        "value": null,
+        "width": null,
+        "units": "",
+        "type": "sphere"
+      },
+      "area": {
+        "value": 20,
+        "type": "sphere",
+        "units": "ft"
+      }
+    },
+    "effects": [],
+    "flags": {},
+    "folder": null,
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    },
+    "_stats": {
+      "systemId": "dnd5e",
+      "systemVersion": "3.2.1",
+      "coreVersion": "12.315",
+      "createdTime": 1733760000000,
+      "modifiedTime": 1733760000000,
+      "lastModifiedBy": "foundry"
+    }
+  },
+  {
+    "_id": "heal",
+    "name": "Heal",
+    "type": "spell",
+    "img": "icons/magic/life/heart-cross-strong-green.webp",
+    "system": {
+      "description": {
+        "value": "<p>Escolha uma criatura que você possa ver dentro do alcance. Uma onda de energia positiva se espalha por ela, fazendo com que recupere 70 pontos de vida. Este feitiço também fecha feridas, remove doenças e neutraliza venenos que estejam afetando a criatura alvo.</p>",
+        "chat": "",
+        "unidentified": ""
+      },
+      "source": "PHB",
+      "level": 6,
+      "school": "evoc",
+      "components": {
+        "value": "VS",
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "ritual": false,
+        "concentration": false
+      },
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "preparation": {
+        "mode": "prepared",
+        "prepared": false
+      },
+      "scaling": {
+        "mode": "level",
+        "formula": "10"
+      },
+      "duration": {
+        "value": "",
+        "unit": "inst"
+      },
+      "range": {
+        "value": 60,
+        "long": null,
+        "units": "ft"
+      },
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": ""
+      },
+      "consume": {
+        "type": "",
+        "target": null,
+        "amount": null
+      },
+      "ability": "",
+      "actionType": "heal",
+      "attackBonus": "",
+      "chatFlavor": "",
+      "critical": {
+        "threshold": null,
+        "damage": ""
+      },
+      "damage": {
+        "parts": [],
+        "versatile": ""
+      },
+      "formula": "",
+      "save": {
+        "ability": "",
+        "dc": null,
+        "scaling": "spell"
+      },
+      "type": {
+        "value": "heal",
+        "subtype": ""
+      },
+      "target": {
+        "value": 1,
+        "width": null,
+        "units": "",
+        "type": "creature"
+      },
+      "healing": {
+        "formula": "70",
+        "type": "healing"
+      }
+    },
+    "effects": [],
+    "flags": {},
+    "folder": null,
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    },
+    "_stats": {
+      "systemId": "dnd5e",
+      "systemVersion": "3.2.1",
+      "coreVersion": "12.315",
+      "createdTime": 1733760000000,
+      "modifiedTime": 1733760000000,
+      "lastModifiedBy": "foundry"
+    }
+  },
+  {
+    "_id": "lightning-bolt",
+    "name": "Lightning Bolt",
+    "type": "spell",
+    "img": "icons/magic/lightning/bolt-strike-clouds-sky.webp",
+    "system": {
+      "description": {
+        "value": "<p>Um raio de luz brilhante se projeta em linha de 30 metros de comprimento e 1,5 metro de largura a partir de você. Cada criatura na linha deve fazer um teste de resistência de Destreza. Uma criatura sofre 8d6 de dano de raio se falhar no teste, ou metade desse dano se obtiver sucesso.</p>",
+        "chat": "",
+        "unidentified": ""
+      },
+      "source": "PHB",
+      "level": 3,
+      "school": "evo",
+      "components": {
+        "value": "VSM",
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "ritual": false,
+        "concentration": false
+      },
+      "materials": {
+        "value": "um pouco de peltre e um pedaço de âmbar",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "preparation": {
+        "mode": "prepared",
+        "prepared": false
+      },
+      "scaling": {
+        "mode": "level",
+        "formula": "1d6"
+      },
+      "duration": {
+        "value": "",
+        "unit": "inst"
+      },
+      "range": {
+        "value": 100,
+        "long": null,
+        "units": "ft"
+      },
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": ""
+      },
+      "consume": {
+        "type": "",
+        "target": null,
+        "amount": null
+      },
+      "ability": "",
+      "actionType": "save",
+      "attackBonus": "",
+      "chatFlavor": "",
+      "critical": {
+        "threshold": null,
+        "damage": ""
+      },
+      "damage": {
+        "parts": [
+          [
+            "8d6",
+            "lightning"
+          ]
+        ],
+        "versatile": ""
+      },
+      "formula": "",
+      "save": {
+        "ability": "dex",
+        "dc": null,
+        "scaling": "spell"
+      },
+      "type": {
+        "value": "save",
+        "subtype": ""
+      },
+      "target": {
+        "value": null,
+        "width": null,
+        "units": "",
+        "type": "line"
+      },
+      "area": {
+        "value": 100,
+        "type": "line",
+        "units": "ft",
+        "width": 5
+      }
+    },
+    "effects": [],
+    "flags": {},
+    "folder": null,
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    },
+    "_stats": {
+      "systemId": "dnd5e",
+      "systemVersion": "3.2.1",
+      "coreVersion": "12.315",
+      "createdTime": 1733760000000,
+      "modifiedTime": 1733760000000,
+      "lastModifiedBy": "foundry"
+    }
+  }
+]

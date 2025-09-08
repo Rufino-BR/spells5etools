@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "level-js": "^6.1.0",
+    "leveldown": "^6.1.1"
+  }
+}

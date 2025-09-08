@@ -1,0 +1,34 @@
+{
+  "id": "clean-spells",
+  "title": "Clean Spells (162 unique)",
+  "description": "Clean compendium with 162 unique D&D 5e spells",
+  "version": "0.3.0",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "12"
+  },
+  "authors": [
+    {
+      "name": "Rufino-BR"
+    }
+  ],
+  "url": "https://github.com/Rufino-BR/spells5etools",
+  "manifest": "https://raw.githubusercontent.com/Rufino-BR/spells5etools/main/clean-module.json",
+  "download": "https://github.com/Rufino-BR/spells5etools/archive/refs/heads/main.zip",
+  "packs": [
+    {
+      "name": "clean-spells",
+      "label": "Clean Spells",
+      "path": "clean-module/packs/clean-spells.db",
+      "type": "Item",
+      "system": "dnd5e"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e"
+      }
+    ]
+  }
+}

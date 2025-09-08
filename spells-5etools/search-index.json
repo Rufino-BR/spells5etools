@@ -1,0 +1,46 @@
+{
+  "cleric": [
+    "heal-5etools",
+    "bless-5etools"
+  ],
+  "druid": [
+    "heal-5etools"
+  ],
+  "paladin": [
+    "bless-5etools"
+  ],
+  "sorcerer": [
+    "fireball-5etools"
+  ],
+  "wizard": [
+    "fireball-5etools"
+  ],
+  "level 1": [
+    "bless-5etools"
+  ],
+  "level 3": [
+    "fireball-5etools"
+  ],
+  "level 6": [
+    "heal-5etools"
+  ],
+  "evocation": [
+    "fireball-5etools",
+    "heal-5etools"
+  ],
+  "enchantment": [
+    "bless-5etools"
+  ],
+  "healing": [
+    "heal-5etools"
+  ],
+  "damage": [
+    "fireball-5etools"
+  ],
+  "fire": [
+    "fireball-5etools"
+  ],
+  "blessing": [
+    "bless-5etools"
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "id": "spells-5etools",
   "title": "Spells (5etools)",
-  "description": "540 unique D&D 5e spells from 5etools data - clean and optimized",
-  "version": "2.0.0",
+  "description": "Complete D&D 5e spells compendium from 5etools data",
+  "version": "4.0.0",
   "compatibility": {
     "minimum": "10",
     "verified": "12"
@@ -19,7 +19,7 @@
     {
       "name": "spells-5etools",
       "label": "Spells (5etools)",
-      "path": "final-module/packs/final-spells.db",
+      "path": "spells-5etools/packs/spells-5etools.db",
       "type": "Item",
       "system": "dnd5e"
     }

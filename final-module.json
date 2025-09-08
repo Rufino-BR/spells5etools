@@ -1,8 +1,8 @@
 {
-  "id": "spells-5etools",
-  "title": "Spells (5etools)",
-  "description": "Compendium of D&D 5e spells generated from 5etools JSON",
-  "version": "0.1.0",
+  "id": "final-spells-5etools",
+  "title": "Final Spells (540 Unique)",
+  "description": "540 unique D&D 5e spells from 5etools data - clean and optimized",
+  "version": "2.0.0",
   "compatibility": {
     "minimum": "10",
     "verified": "12"
@@ -13,13 +13,13 @@
     }
   ],
   "url": "https://github.com/Rufino-BR/spells5etools",
-  "manifest": "https://raw.githubusercontent.com/Rufino-BR/spells5etools/main/spells-5etools/module.json",
+  "manifest": "https://raw.githubusercontent.com/Rufino-BR/spells5etools/main/final-module.json",
   "download": "https://github.com/Rufino-BR/spells5etools/archive/refs/heads/main.zip",
   "packs": [
     {
-      "name": "spells-5etools",
-      "label": "Spells (5etools)",
-      "path": "packs/spells-5etools.db",
+      "name": "final-spells",
+      "label": "Final Spells",
+      "path": "final-module/packs/final-spells.db",
       "type": "Item",
       "system": "dnd5e"
     }

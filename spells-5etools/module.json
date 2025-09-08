@@ -9,12 +9,9 @@
   },
   "authors": [
     {
-      "name": "Rufino-BR"
+      "name": "Generated"
     }
   ],
-  "url": "https://github.com/Rufino-BR/spells5etools",
-  "manifest": "https://raw.githubusercontent.com/Rufino-BR/spells5etools/main/spells-5etools/module.json",
-  "download": "https://github.com/Rufino-BR/spells5etools/archive/refs/heads/main.zip",
   "packs": [
     {
       "name": "spells-5etools",

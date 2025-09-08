@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Abi-Dalzim's Horrid Wilting",
+    "type": "spell",
+    "img": "icons/magic/air/air-burst-spiral-pink.webp",
+    "system": {
+      "description": {
+        "value": "<p>You draw the moisture from every creature in a 30-foot cube centered on a point you choose within range. Each creature in that area must make a Constitution saving throw. Constructs and undead aren't affected, and plants and water elementals make this saving throw with disadvantage. A creature takes {@damage 12d8} necrotic damage on a failed save, or half as much damage on a successful one.</p>\n<p>Nonmagical plants in the area that aren't creatures, such as trees and shrubs, wither and die instantly.</p>"
+      },
+      "level": 8,
+      "school": "n",
+      "preparation": {
+        "mode": "prepared",
+        "prepared": false
+      },
+      "components": {
+        "value": "vsm",
+        "vocal": true,
+        "somatic": true,
+        "material": true,
+        "ritual": false
+      },
+      "materials": {
+        "value": "a bit of sponge"
+      }
+    }
+  },
+  {
+    "name": "Absorb Elements",
+    "type": "spell",
+    "img": "icons/magic/air/air-burst-spiral-pink.webp",
+    "system": {
+      "description": {
+        "value": "<p>The spell captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack. You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on your next turn, the target takes an extra {@damage 1d6} damage of the triggering type, and the spell ends.</p>"
+      },
+      "level": 1,
+      "school": "a",
+      "preparation": {
+        "mode": "prepared",
+        "prepared": false
+      },
+      "components": {
+        "value": "s",
+        "vocal": false,
+        "somatic": true,
+        "material": false,
+        "ritual": false
+      },
+      "materials": {
+        "value": ""
+      }
+    }
+  },
+  {
+    "name": "Acid Splash",
+    "type": "spell",
+    "img": "icons/magic/symbols/runes-star-pentagon-blue.webp",
+    "system": {
+      "description": {
+        "value": "<p>You hurl a bubble of acid. Choose one creature you can see within range, or choose two creatures you can see within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take {@damage 1d6} acid damage.</p>\n<p>This spell's damage increases by {@damage 1d6} when you reach 5th level ({@damage 2d6}), 11th level ({@damage 3d6}), and 17th level ({@damage 4d6}).</p>"
+      },
+      "level": 0,
+      "school": "c",
+      "preparation": {
+        "mode": "prepared",
+        "prepared": false
+      },
+      "components": {
+        "value": "vs",
+        "vocal": true,
+        "somatic": true,
+        "material": false,
+        "ritual": false
+      },
+      "materials": {
+        "value": ""
+      }
+    }
+  }
+]

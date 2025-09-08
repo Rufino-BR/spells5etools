@@ -10,8 +10,7 @@
   "dependencies": {
     "better-sqlite3": "^9.4.5",
     "fs-extra": "^11.2.0",
+    "level": "^10.0.0",
     "node-fetch": "^3.3.2"
   }
 }
-
-

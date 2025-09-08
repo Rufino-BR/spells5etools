@@ -1,0 +1,34 @@
+{
+  "id": "test-spells",
+  "title": "Test Spells",
+  "description": "Test compendium with spells",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "12"
+  },
+  "authors": [
+    {
+      "name": "Rufino-BR"
+    }
+  ],
+  "url": "https://github.com/Rufino-BR/spells5etools",
+  "manifest": "https://raw.githubusercontent.com/Rufino-BR/spells5etools/main/test-module.json",
+  "download": "https://github.com/Rufino-BR/spells5etools/archive/refs/heads/main.zip",
+  "packs": [
+    {
+      "name": "test-spells",
+      "label": "Test Spells",
+      "path": "test-module/packs/test-spells.db",
+      "type": "Item",
+      "system": "dnd5e"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e"
+      }
+    ]
+  }
+}

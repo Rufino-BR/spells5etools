@@ -21,6 +21,9 @@
       "system": "dnd5e"
     }
   ],
+  "scripts": [
+    "scripts/spells-5etools.js"
+  ],
   "relationships": {
     "systems": [
       {

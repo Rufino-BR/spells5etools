@@ -1,0 +1,56 @@
+{
+  "cleric": [
+    "heal-cleric",
+    "bless-cleric"
+  ],
+  "druid": [
+    "heal-druid"
+  ],
+  "paladin": [
+    "bless-paladin"
+  ],
+  "sorcerer": [
+    "fireball-sorcerer"
+  ],
+  "wizard": [
+    "fireball-wizard"
+  ],
+  "level 1": [
+    "bless-cleric",
+    "bless-paladin"
+  ],
+  "level 3": [
+    "fireball-sorcerer",
+    "fireball-wizard"
+  ],
+  "level 6": [
+    "heal-cleric",
+    "heal-druid"
+  ],
+  "evocation": [
+    "fireball-sorcerer",
+    "fireball-wizard",
+    "heal-cleric",
+    "heal-druid"
+  ],
+  "enchantment": [
+    "bless-cleric",
+    "bless-paladin"
+  ],
+  "healing": [
+    "heal-cleric",
+    "heal-druid"
+  ],
+  "damage": [
+    "fireball-sorcerer",
+    "fireball-wizard"
+  ],
+  "fire": [
+    "fireball-sorcerer",
+    "fireball-wizard"
+  ],
+  "blessing": [
+    "bless-cleric",
+    "bless-paladin"
+  ]
+}

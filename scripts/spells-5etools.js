@@ -76,8 +76,16 @@ Hooks.on('renderCompendium', (compendium, html, data) => {
             const gameCompendium = game.packs.get('spells-5etools.spells-5etools');
             if (!gameCompendium) {
                 console.error('❌ Compendium não encontrado!');
+                console.log('📋 Compendiums disponíveis:');
+                game.packs.forEach(pack => {
+                    console.log(`   - ${pack.metadata.id}: ${pack.metadata.label}`);
+                });
                 return;
             }
+            
+            console.log(`📦 Compendium encontrado: ${gameCompendium.metadata.label}`);
+            console.log(`📊 Status: ${gameCompendium.status}`);
+            console.log(`📚 Documentos indexados: ${gameCompendium.index.size}`);
             
             console.log('🔄 Carregando documentos do compendium...');
             gameCompendium.getDocuments().then(documents => {

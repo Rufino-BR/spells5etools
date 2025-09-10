@@ -2,7 +2,7 @@
   "id": "spells-5etools",
   "title": "Spells (5etools)",
   "description": "Complete D&D 5e spells compendium from 5etools data",
-  "version": "8.4.0",
+  "version": "8.5.0",
   "compatibility": {
     "minimum": "10",
     "verified": "12"

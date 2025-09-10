@@ -88,6 +88,19 @@ Hooks.on('renderCompendium', (compendium, html, data) => {
                     console.log(`   - ${doc.name}: classes=${JSON.stringify(doc.system?.classes?.value)}`);
                 });
                 
+                // Procurar por nossas magias específicas
+                const ourSpells = documents.filter(doc => 
+                    doc.name.includes('(Cleric)') || 
+                    doc.name.includes('(Wizard)') || 
+                    doc.name.includes('(Sorcerer)') ||
+                    doc.name.includes('(Paladin)') ||
+                    doc.name.includes('(Druid)')
+                );
+                console.log(`🎯 Nossas magias encontradas: ${ourSpells.length}`);
+                ourSpells.forEach(doc => {
+                    console.log(`   ✓ ${doc.name}: classes=${JSON.stringify(doc.system?.classes?.value)}`);
+                });
+                
                 const filtered = documents.filter(doc => {
                     // Verificar se a magia tem a classe procurada
                     if (doc.system && doc.system.classes && doc.system.classes.value) {

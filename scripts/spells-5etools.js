@@ -83,7 +83,8 @@ Hooks.on('renderCompendium', (compendium, html, data) => {
 
 // Interceptar busca do compendium para filtrar por classe
 Hooks.on('renderCompendiumDirectory', (app, html, data) => {
-    if (app.collection.metadata.id !== 'spells-5etools.spells-5etools') {
+    // Verificar se é o compendium correto e se tem collection
+    if (!app.collection || !app.collection.metadata || app.collection.metadata.id !== 'spells-5etools.spells-5etools') {
         return;
     }
     

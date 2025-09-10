@@ -9,45 +9,6 @@ Hooks.once('ready', () => {
         return;
     }
     
-    // Estender a funcionalidade de busca do compendium
-    const originalSearch = compendium.search;
-    compendium.search = function(query, options = {}) {
-        console.log('🔍 Buscando por:', query);
-        
-        // Se a busca contém uma classe, filtrar por ela
-        const classNames = ['cleric', 'wizard', 'sorcerer', 'bard', 'druid', 'paladin', 'ranger', 'warlock', 'artificer'];
-        const foundClass = classNames.find(cls => query.toLowerCase().includes(cls));
-        
-        if (foundClass) {
-            console.log(`🎯 Filtrando por classe: ${foundClass}`);
-            
-            // Buscar todas as magias
-            return compendium.getDocuments().then(documents => {
-                const filtered = documents.filter(doc => {
-                    // Verificar se a magia tem a classe procurada
-                    if (doc.system && doc.system.classes && doc.system.classes.value) {
-                        return doc.system.classes.value.includes(foundClass);
-                    }
-                    
-                    // Verificar campos de busca customizados
-                    if (doc.system && doc.system.searchable) {
-                        return doc.system.searchable.classes.includes(foundClass) ||
-                               doc.system.searchable.classNames.toLowerCase().includes(foundClass);
-                    }
-                    
-                    // Verificar no nome da magia
-                    return doc.name.toLowerCase().includes(foundClass);
-                });
-                
-                console.log(`✅ Encontradas ${filtered.length} magias para ${foundClass}`);
-                return filtered;
-            });
-        }
-        
-        // Se não é busca por classe, usar busca normal
-        return originalSearch.call(this, query, options);
-    };
-    
     console.log('✅ Filtros de classe habilitados!');
     console.log('🎯 Agora você pode buscar por: cleric, wizard, sorcerer, bard, druid, paladin, ranger, warlock, artificer');
 });
@@ -90,10 +51,14 @@ Hooks.on('renderCompendium', (compendium, html, data) => {
         const className = $(this).data('class');
         const searchInput = $html.find('input[type="search"]');
         
+        console.log(`🔍 Clicou no filtro: ${className}`);
+        
         if (className === 'all') {
             searchInput.val('').trigger('input');
+            console.log('✅ Limpando filtro');
         } else {
             searchInput.val(className).trigger('input');
+            console.log(`✅ Filtrando por: ${className}`);
         }
         
         // Destacar botão ativo
@@ -113,6 +78,64 @@ Hooks.on('renderCompendium', (compendium, html, data) => {
     $html.find('.filter-btn.active').css({
         'background': '#007cba',
         'color': '#fff'
+    });
+});
+
+// Interceptar busca do compendium para filtrar por classe
+Hooks.on('renderCompendiumDirectory', (app, html, data) => {
+    if (app.collection.metadata.id !== 'spells-5etools.spells-5etools') {
+        return;
+    }
+    
+    console.log('🎯 Interceptando busca do compendium...');
+    
+    // Interceptar o evento de busca
+    html.find('input[type="search"]').on('input', function() {
+        const query = $(this).val().toLowerCase();
+        console.log(`🔍 Busca: "${query}"`);
+        
+        if (query === '') {
+            // Limpar filtros
+            app.collection.filtered = app.collection.documents;
+            app.render();
+            return;
+        }
+        
+        // Filtrar por classe
+        const classNames = ['cleric', 'wizard', 'sorcerer', 'bard', 'druid', 'paladin', 'ranger', 'warlock', 'artificer'];
+        const foundClass = classNames.find(cls => query.includes(cls));
+        
+        if (foundClass) {
+            console.log(`🎯 Filtrando por classe: ${foundClass}`);
+            
+            const filtered = app.collection.documents.filter(doc => {
+                // Verificar se a magia tem a classe procurada
+                if (doc.system && doc.system.classes && doc.system.classes.value) {
+                    return doc.system.classes.value.includes(foundClass);
+                }
+                
+                // Verificar campos de busca customizados
+                if (doc.system && doc.system.searchable) {
+                    return doc.system.searchable.classes.includes(foundClass) ||
+                           doc.system.searchable.classNames.toLowerCase().includes(foundClass);
+                }
+                
+                // Verificar no nome da magia
+                return doc.name.toLowerCase().includes(foundClass);
+            });
+            
+            console.log(`✅ Encontradas ${filtered.length} magias para ${foundClass}`);
+            app.collection.filtered = filtered;
+            app.render();
+        } else {
+            // Busca normal por nome
+            const filtered = app.collection.documents.filter(doc => 
+                doc.name.toLowerCase().includes(query)
+            );
+            console.log(`✅ Encontradas ${filtered.length} magias para "${query}"`);
+            app.collection.filtered = filtered;
+            app.render();
+        }
     });
 });
 

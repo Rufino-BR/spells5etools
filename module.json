@@ -2,7 +2,7 @@
   "id": "spells-5etools",
   "title": "Spells (5etools)",
   "description": "Complete D&D 5e spells compendium from 5etools data",
-  "version": "7.8.0",
+  "version": "7.9.0",
   "compatibility": {
     "minimum": "10",
     "verified": "12"
@@ -33,5 +33,11 @@
   },
   "scripts": [
     "scripts/spells-5etools.js"
-  ]
+  ],
+  "esmodules": [
+    "scripts/spells-5etools.js"
+  ],
+  "styles": [],
+  "languages": [],
+  "media": []
 }

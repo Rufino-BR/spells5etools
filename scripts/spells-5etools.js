@@ -60,6 +60,9 @@ Hooks.on('renderCompendium', (compendium, html, data) => {
     
     console.log('🎨 Adicionando botões de filtro rápido...');
     
+    // Converter html para jQuery se necessário
+    const $html = html instanceof $ ? html : $(html);
+    
     // Criar botões de filtro
     const filterButtons = $(`
         <div class="spells-5etools-filters" style="margin: 10px 0; padding: 10px; background: #f0f0f0; border-radius: 5px;">
@@ -80,12 +83,12 @@ Hooks.on('renderCompendium', (compendium, html, data) => {
     `);
     
     // Inserir antes da barra de busca
-    html.find('.directory-header').after(filterButtons);
+    $html.find('.directory-header').after(filterButtons);
     
     // Adicionar eventos aos botões
-    html.find('.filter-btn').on('click', function() {
+    $html.find('.filter-btn').on('click', function() {
         const className = $(this).data('class');
-        const searchInput = html.find('input[type="search"]');
+        const searchInput = $html.find('input[type="search"]');
         
         if (className === 'all') {
             searchInput.val('').trigger('input');
@@ -94,12 +97,12 @@ Hooks.on('renderCompendium', (compendium, html, data) => {
         }
         
         // Destacar botão ativo
-        html.find('.filter-btn').removeClass('active');
+        $html.find('.filter-btn').removeClass('active');
         $(this).addClass('active');
     });
     
-    // Estilo para botão ativo
-    html.find('.filter-btn').css({
+    // Estilo para botões
+    $html.find('.filter-btn').css({
         'padding': '5px 10px',
         'border': '1px solid #ccc',
         'background': '#fff',
@@ -107,7 +110,7 @@ Hooks.on('renderCompendium', (compendium, html, data) => {
         'border-radius': '3px'
     });
     
-    html.find('.filter-btn.active').css({
+    $html.find('.filter-btn.active').css({
         'background': '#007cba',
         'color': '#fff'
     });

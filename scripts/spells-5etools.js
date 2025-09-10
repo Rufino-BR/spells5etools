@@ -81,6 +81,13 @@ Hooks.on('renderCompendium', (compendium, html, data) => {
             
             console.log('🔄 Carregando documentos do compendium...');
             gameCompendium.getDocuments().then(documents => {
+                console.log(`📚 Total de documentos carregados: ${documents.length}`);
+                
+                // Debug: mostrar algumas magias
+                documents.slice(0, 3).forEach(doc => {
+                    console.log(`   - ${doc.name}: classes=${JSON.stringify(doc.system?.classes?.value)}`);
+                });
+                
                 const filtered = documents.filter(doc => {
                     // Verificar se a magia tem a classe procurada
                     if (doc.system && doc.system.classes && doc.system.classes.value) {
@@ -98,6 +105,11 @@ Hooks.on('renderCompendium', (compendium, html, data) => {
                 });
                 
                 console.log(`✅ Encontradas ${filtered.length} magias para ${className}`);
+                
+                // Debug: mostrar magias encontradas
+                filtered.forEach(doc => {
+                    console.log(`   ✓ ${doc.name}`);
+                });
                 
                 // Aplicar filtro na interface
                 compendium.collection.filtered = filtered;

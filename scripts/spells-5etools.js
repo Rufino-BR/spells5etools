@@ -19,10 +19,15 @@ Hooks.on('renderCompendium', (compendium, html, data) => {
         return;
     }
     
-    console.log('🎨 Adicionando botões de filtro rápido...');
-    
     // Converter html para jQuery se necessário
     const $html = html instanceof $ ? html : $(html);
+    
+    // Verificar se os filtros já foram adicionados
+    if ($html.find('.spells-5etools-filters').length > 0) {
+        return;
+    }
+    
+    console.log('🎨 Adicionando botões de filtro rápido...');
     
     // Criar botões de filtro
     const filterButtons = $(`
@@ -66,26 +71,53 @@ Hooks.on('renderCompendium', (compendium, html, data) => {
         } else {
             searchInput.val(className);
             console.log(`✅ Filtrando por: ${className}`);
-            // Aplicar filtro diretamente
-            const filtered = compendium.collection.documents.filter(doc => {
-                // Verificar se a magia tem a classe procurada
-                if (doc.system && doc.system.classes && doc.system.classes.value) {
-                    return doc.system.classes.value.includes(className);
-                }
-                
-                // Verificar campos de busca customizados
-                if (doc.system && doc.system.searchable) {
-                    return doc.system.searchable.classes.includes(className) ||
-                           doc.system.searchable.classNames.toLowerCase().includes(className);
-                }
-                
-                // Verificar no nome da magia
-                return doc.name.toLowerCase().includes(className);
-            });
             
-            console.log(`✅ Encontradas ${filtered.length} magias para ${className}`);
-            compendium.collection.filtered = filtered;
-            compendium.render();
+            // Verificar se collection.documents existe
+            if (!compendium.collection.documents) {
+                console.warn('⚠️ collection.documents não encontrado, tentando carregar...');
+                compendium.getDocuments().then(documents => {
+                    const filtered = documents.filter(doc => {
+                        // Verificar se a magia tem a classe procurada
+                        if (doc.system && doc.system.classes && doc.system.classes.value) {
+                            return doc.system.classes.value.includes(className);
+                        }
+                        
+                        // Verificar campos de busca customizados
+                        if (doc.system && doc.system.searchable) {
+                            return doc.system.searchable.classes.includes(className) ||
+                                   doc.system.searchable.classNames.toLowerCase().includes(className);
+                        }
+                        
+                        // Verificar no nome da magia
+                        return doc.name.toLowerCase().includes(className);
+                    });
+                    
+                    console.log(`✅ Encontradas ${filtered.length} magias para ${className}`);
+                    compendium.collection.filtered = filtered;
+                    compendium.render();
+                });
+            } else {
+                // Aplicar filtro diretamente
+                const filtered = compendium.collection.documents.filter(doc => {
+                    // Verificar se a magia tem a classe procurada
+                    if (doc.system && doc.system.classes && doc.system.classes.value) {
+                        return doc.system.classes.value.includes(className);
+                    }
+                    
+                    // Verificar campos de busca customizados
+                    if (doc.system && doc.system.searchable) {
+                        return doc.system.searchable.classes.includes(className) ||
+                               doc.system.searchable.classNames.toLowerCase().includes(className);
+                    }
+                    
+                    // Verificar no nome da magia
+                    return doc.name.toLowerCase().includes(className);
+                });
+                
+                console.log(`✅ Encontradas ${filtered.length} magias para ${className}`);
+                compendium.collection.filtered = filtered;
+                compendium.render();
+            }
         }
     });
     

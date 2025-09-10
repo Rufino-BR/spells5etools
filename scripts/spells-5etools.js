@@ -15,7 +15,7 @@ Hooks.once('ready', () => {
 
 // Adicionar botões de filtro rápido na interface
 Hooks.on('renderCompendium', (compendium, html, data) => {
-    if (compendium.collection.metadata.id !== 'spells-5etools.spells-5etools') {
+    if (!compendium.collection || !compendium.collection.metadata || compendium.collection.metadata.id !== 'spells-5etools.spells-5etools') {
         return;
     }
     
@@ -53,17 +53,40 @@ Hooks.on('renderCompendium', (compendium, html, data) => {
         
         console.log(`🔍 Clicou no filtro: ${className}`);
         
-        if (className === 'all') {
-            searchInput.val('').trigger('input');
-            console.log('✅ Limpando filtro');
-        } else {
-            searchInput.val(className).trigger('input');
-            console.log(`✅ Filtrando por: ${className}`);
-        }
-        
         // Destacar botão ativo
         $html.find('.filter-btn').removeClass('active');
         $(this).addClass('active');
+        
+        if (className === 'all') {
+            searchInput.val('');
+            console.log('✅ Limpando filtro');
+            // Aplicar filtro diretamente
+            compendium.collection.filtered = compendium.collection.documents;
+            compendium.render();
+        } else {
+            searchInput.val(className);
+            console.log(`✅ Filtrando por: ${className}`);
+            // Aplicar filtro diretamente
+            const filtered = compendium.collection.documents.filter(doc => {
+                // Verificar se a magia tem a classe procurada
+                if (doc.system && doc.system.classes && doc.system.classes.value) {
+                    return doc.system.classes.value.includes(className);
+                }
+                
+                // Verificar campos de busca customizados
+                if (doc.system && doc.system.searchable) {
+                    return doc.system.searchable.classes.includes(className) ||
+                           doc.system.searchable.classNames.toLowerCase().includes(className);
+                }
+                
+                // Verificar no nome da magia
+                return doc.name.toLowerCase().includes(className);
+            });
+            
+            console.log(`✅ Encontradas ${filtered.length} magias para ${className}`);
+            compendium.collection.filtered = filtered;
+            compendium.render();
+        }
     });
     
     // Estilo para botões

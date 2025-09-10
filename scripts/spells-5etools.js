@@ -72,33 +72,16 @@ Hooks.on('renderCompendium', (compendium, html, data) => {
             searchInput.val(className);
             console.log(`✅ Filtrando por: ${className}`);
             
-            // Verificar se collection.documents existe
-            if (!compendium.collection.documents) {
-                console.warn('⚠️ collection.documents não encontrado, tentando carregar...');
-                compendium.getDocuments().then(documents => {
-                    const filtered = documents.filter(doc => {
-                        // Verificar se a magia tem a classe procurada
-                        if (doc.system && doc.system.classes && doc.system.classes.value) {
-                            return doc.system.classes.value.includes(className);
-                        }
-                        
-                        // Verificar campos de busca customizados
-                        if (doc.system && doc.system.searchable) {
-                            return doc.system.searchable.classes.includes(className) ||
-                                   doc.system.searchable.classNames.toLowerCase().includes(className);
-                        }
-                        
-                        // Verificar no nome da magia
-                        return doc.name.toLowerCase().includes(className);
-                    });
-                    
-                    console.log(`✅ Encontradas ${filtered.length} magias para ${className}`);
-                    compendium.collection.filtered = filtered;
-                    compendium.render();
-                });
-            } else {
-                // Aplicar filtro diretamente
-                const filtered = compendium.collection.documents.filter(doc => {
+            // Usar o compendium correto do game.packs
+            const gameCompendium = game.packs.get('spells-5etools.spells-5etools');
+            if (!gameCompendium) {
+                console.error('❌ Compendium não encontrado!');
+                return;
+            }
+            
+            console.log('🔄 Carregando documentos do compendium...');
+            gameCompendium.getDocuments().then(documents => {
+                const filtered = documents.filter(doc => {
                     // Verificar se a magia tem a classe procurada
                     if (doc.system && doc.system.classes && doc.system.classes.value) {
                         return doc.system.classes.value.includes(className);
@@ -115,9 +98,13 @@ Hooks.on('renderCompendium', (compendium, html, data) => {
                 });
                 
                 console.log(`✅ Encontradas ${filtered.length} magias para ${className}`);
+                
+                // Aplicar filtro na interface
                 compendium.collection.filtered = filtered;
                 compendium.render();
-            }
+            }).catch(error => {
+                console.error('❌ Erro ao carregar documentos:', error);
+            });
         }
     });
     

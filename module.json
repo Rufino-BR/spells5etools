@@ -2,7 +2,7 @@
   "id": "spells-5etools",
   "title": "Spells (5etools)",
   "description": "Complete D&D 5e spells compendium from 5etools data",
-  "version": "9.1.0",
+  "version": "9.2.0",
   "compatibility": {
     "minimum": "10",
     "verified": "12"
@@ -19,7 +19,7 @@
     {
       "name": "spells-5etools",
       "label": "Spells (5etools)",
-      "path": "spells-5etools/packs/spells-5etools.json",
+      "path": "spells-5etools/packs/spells-5etools.ldb",
       "type": "Item",
       "system": "dnd5e"
     }

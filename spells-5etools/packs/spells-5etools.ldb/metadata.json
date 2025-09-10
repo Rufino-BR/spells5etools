@@ -1,0 +1,46 @@
+{
+  "_id": "spells-5etools",
+  "name": "spells-5etools",
+  "label": "Spells (5etools)",
+  "path": "packs/spells-5etools.ldb",
+  "type": "Item",
+  "system": "dnd5e",
+  "documents": [
+    {
+      "_id": "fireball-sorcerer",
+      "name": "Fireball (Sorcerer)",
+      "type": "spell",
+      "img": "icons/magic/fire/projectile-magic-flame-burst.webp"
+    },
+    {
+      "_id": "fireball-wizard",
+      "name": "Fireball (Wizard)",
+      "type": "spell",
+      "img": "icons/magic/fire/projectile-magic-flame-burst.webp"
+    },
+    {
+      "_id": "heal-cleric",
+      "name": "Heal (Cleric)",
+      "type": "spell",
+      "img": "icons/magic/life/heart-cross-strong-green.webp"
+    },
+    {
+      "_id": "heal-druid",
+      "name": "Heal (Druid)",
+      "type": "spell",
+      "img": "icons/magic/life/heart-cross-strong-green.webp"
+    },
+    {
+      "_id": "bless-cleric",
+      "name": "Bless (Cleric)",
+      "type": "spell",
+      "img": "icons/magic/light/beam-strike-spirit.webp"
+    },
+    {
+      "_id": "bless-paladin",
+      "name": "Bless (Paladin)",
+      "type": "spell",
+      "img": "icons/magic/light/beam-strike-spirit.webp"
+    }
+  ]
+}

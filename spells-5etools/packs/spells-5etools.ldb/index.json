@@ -1,34 +1,35 @@
 [
   {
-    "_id": "fireball-sorcerer",
-    "name": "Fireball (Sorcerer)",
+    "_id": "acid-splash",
+    "name": "Acid Splash",
     "type": "spell",
-    "img": "icons/magic/fire/projectile-magic-flame-burst.webp",
+    "img": "icons/magic/acid/projectile-bubbles-burst.webp",
     "data": {
       "description": {
-        "value": "<p>Uma esfera brilhante de fogo voa do seu dedo para um ponto escolhido dentro do alcance e então explode com um estrondo ensurdecedor. Cada criatura em uma esfera de 6 metros de raio centrada nesse ponto deve fazer um teste de resistência de Destreza. Uma criatura sofre 8d6 de dano de fogo se falhar no teste, ou metade desse dano se obtiver sucesso.</p><p><strong>Classe:</strong> Sorcerer</p>",
+        "value": "<p>You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage.</p>",
         "chat": "",
         "unidentified": ""
       },
       "source": "5etools",
-      "level": 3,
-      "school": "evo",
+      "level": 0,
+      "school": "conjuration",
       "classes": {
         "value": [
-          "sorcerer"
+          "sorcerer",
+          "wizard"
         ],
         "subclass": []
       },
       "components": {
-        "value": "VSM",
+        "value": "VS",
         "verbal": true,
         "somatic": true,
-        "material": true,
+        "material": false,
         "ritual": false,
         "concentration": false
       },
       "materials": {
-        "value": "uma pequena bola de guano de morcego e enxofre",
+        "value": "",
         "consumed": false,
         "cost": 0,
         "supply": 0
@@ -46,7 +47,7 @@
         "unit": "inst"
       },
       "range": {
-        "value": 150,
+        "value": 60,
         "long": null,
         "units": "ft"
       },
@@ -72,7 +73,230 @@
       "damage": {
         "parts": [
           [
-            "8d6",
+            "1d6",
+            "acid"
+          ]
+        ],
+        "versatile": ""
+      },
+      "formula": "",
+      "save": {
+        "ability": "dex",
+        "dc": null,
+        "scaling": "spell"
+      },
+      "type": {
+        "value": "save",
+        "subtype": ""
+      },
+      "target": {
+        "value": null,
+        "width": null,
+        "units": "",
+        "type": "creature"
+      }
+    },
+    "effects": [],
+    "flags": {},
+    "folder": null,
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    },
+    "_stats": {
+      "systemId": "dnd5e",
+      "systemVersion": "3.2.1",
+      "coreVersion": "12.315",
+      "createdTime": 1733760000000,
+      "modifiedTime": 1733760000000,
+      "lastModifiedBy": "foundry"
+    }
+  },
+  {
+    "_id": "blade-ward",
+    "name": "Blade Ward",
+    "type": "spell",
+    "img": "icons/magic/defensive/shield-barrier-flaming-diamond.webp",
+    "data": {
+      "description": {
+        "value": "<p>You extend your hand and trace a sigil of warding in the air. Until the end of your next turn, you have resistance against bludgeoning, piercing, and slashing damage dealt by weapon attacks.</p>",
+        "chat": "",
+        "unidentified": ""
+      },
+      "source": "5etools",
+      "level": 0,
+      "school": "abjuration",
+      "classes": {
+        "value": [
+          "bard",
+          "sorcerer",
+          "warlock",
+          "wizard"
+        ],
+        "subclass": []
+      },
+      "components": {
+        "value": "VS",
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "ritual": false,
+        "concentration": false
+      },
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "preparation": {
+        "mode": "prepared",
+        "prepared": false
+      },
+      "scaling": {
+        "mode": "level",
+        "formula": ""
+      },
+      "duration": {
+        "value": 1,
+        "unit": "round"
+      },
+      "range": {
+        "value": null,
+        "long": null,
+        "units": "self"
+      },
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": ""
+      },
+      "consume": {
+        "type": "",
+        "target": null,
+        "amount": null
+      },
+      "ability": "",
+      "actionType": "other",
+      "attackBonus": "",
+      "chatFlavor": "",
+      "critical": {
+        "threshold": null,
+        "damage": ""
+      },
+      "damage": {
+        "parts": [],
+        "versatile": ""
+      },
+      "formula": "",
+      "save": {
+        "ability": "",
+        "dc": null,
+        "scaling": "spell"
+      },
+      "type": {
+        "value": "other",
+        "subtype": ""
+      },
+      "target": {
+        "value": null,
+        "width": null,
+        "units": "",
+        "type": "self"
+      }
+    },
+    "effects": [],
+    "flags": {},
+    "folder": null,
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    },
+    "_stats": {
+      "systemId": "dnd5e",
+      "systemVersion": "3.2.1",
+      "coreVersion": "12.315",
+      "createdTime": 1733760000000,
+      "modifiedTime": 1733760000000,
+      "lastModifiedBy": "foundry"
+    }
+  },
+  {
+    "_id": "burning-hands",
+    "name": "Burning Hands",
+    "type": "spell",
+    "img": "icons/magic/fire/flame-burst-hand.webp",
+    "data": {
+      "description": {
+        "value": "<p>As you hold your hands with thumbs touching and fingers spread, a thin sheet of flames shoots forth from your outstretched fingertips. Each creature in a 15-foot cone must make a Dexterity saving throw. A target takes 3d6 fire damage on a failed save, or half as much damage on a successful one.</p><p>The fire ignites any flammable objects in the area that aren't being worn or carried.</p>",
+        "chat": "",
+        "unidentified": ""
+      },
+      "source": "5etools",
+      "level": 1,
+      "school": "evocation",
+      "classes": {
+        "value": [
+          "sorcerer",
+          "wizard"
+        ],
+        "subclass": []
+      },
+      "components": {
+        "value": "VS",
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "ritual": false,
+        "concentration": false
+      },
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "preparation": {
+        "mode": "prepared",
+        "prepared": false
+      },
+      "scaling": {
+        "mode": "level",
+        "formula": "1d6"
+      },
+      "duration": {
+        "value": "",
+        "unit": "inst"
+      },
+      "range": {
+        "value": null,
+        "long": null,
+        "units": "self"
+      },
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": ""
+      },
+      "consume": {
+        "type": "",
+        "target": null,
+        "amount": null
+      },
+      "ability": "",
+      "actionType": "save",
+      "attackBonus": "",
+      "chatFlavor": "",
+      "critical": {
+        "threshold": null,
+        "damage": ""
+      },
+      "damage": {
+        "parts": [
+          [
+            "3d6",
             "fire"
           ]
         ],
@@ -92,11 +316,11 @@
         "value": null,
         "width": null,
         "units": "",
-        "type": "sphere"
+        "type": "cone"
       },
       "area": {
-        "value": 20,
-        "type": "sphere",
+        "value": 15,
+        "type": "cone",
         "units": "ft"
       }
     },
@@ -117,21 +341,363 @@
     }
   },
   {
-    "_id": "fireball-wizard",
-    "name": "Fireball (Wizard)",
+    "_id": "cure-wounds",
+    "name": "Cure Wounds",
+    "type": "spell",
+    "img": "icons/magic/life/heart-cross-strong-green.webp",
+    "data": {
+      "description": {
+        "value": "<p>A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.</p>",
+        "chat": "",
+        "unidentified": ""
+      },
+      "source": "5etools",
+      "level": 1,
+      "school": "evocation",
+      "classes": {
+        "value": [
+          "bard",
+          "cleric",
+          "druid",
+          "paladin",
+          "ranger"
+        ],
+        "subclass": []
+      },
+      "components": {
+        "value": "VS",
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "ritual": false,
+        "concentration": false
+      },
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "preparation": {
+        "mode": "prepared",
+        "prepared": false
+      },
+      "scaling": {
+        "mode": "level",
+        "formula": "1d8"
+      },
+      "duration": {
+        "value": "",
+        "unit": "inst"
+      },
+      "range": {
+        "value": null,
+        "long": null,
+        "units": "touch"
+      },
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": ""
+      },
+      "consume": {
+        "type": "",
+        "target": null,
+        "amount": null
+      },
+      "ability": "",
+      "actionType": "heal",
+      "attackBonus": "",
+      "chatFlavor": "",
+      "critical": {
+        "threshold": null,
+        "damage": ""
+      },
+      "damage": {
+        "parts": [],
+        "versatile": ""
+      },
+      "formula": "",
+      "save": {
+        "ability": "",
+        "dc": null,
+        "scaling": "spell"
+      },
+      "type": {
+        "value": "heal",
+        "subtype": ""
+      },
+      "target": {
+        "value": null,
+        "width": null,
+        "units": "",
+        "type": "creature"
+      },
+      "healing": {
+        "formula": "1d8",
+        "type": "healing"
+      }
+    },
+    "effects": [],
+    "flags": {},
+    "folder": null,
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    },
+    "_stats": {
+      "systemId": "dnd5e",
+      "systemVersion": "3.2.1",
+      "coreVersion": "12.315",
+      "createdTime": 1733760000000,
+      "modifiedTime": 1733760000000,
+      "lastModifiedBy": "foundry"
+    }
+  },
+  {
+    "_id": "detect-magic",
+    "name": "Detect Magic",
+    "type": "spell",
+    "img": "icons/magic/perception/eye-ringed-glow-yellow.webp",
+    "data": {
+      "description": {
+        "value": "<p>For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any.</p><p>The spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.</p>",
+        "chat": "",
+        "unidentified": ""
+      },
+      "source": "5etools",
+      "level": 1,
+      "school": "divination",
+      "classes": {
+        "value": [
+          "bard",
+          "cleric",
+          "druid",
+          "paladin",
+          "ranger",
+          "sorcerer",
+          "wizard"
+        ],
+        "subclass": []
+      },
+      "components": {
+        "value": "VS",
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "ritual": true,
+        "concentration": true
+      },
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "preparation": {
+        "mode": "prepared",
+        "prepared": false
+      },
+      "scaling": {
+        "mode": "level",
+        "formula": ""
+      },
+      "duration": {
+        "value": 10,
+        "unit": "min"
+      },
+      "range": {
+        "value": null,
+        "long": null,
+        "units": "self"
+      },
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": ""
+      },
+      "consume": {
+        "type": "",
+        "target": null,
+        "amount": null
+      },
+      "ability": "",
+      "actionType": "other",
+      "attackBonus": "",
+      "chatFlavor": "",
+      "critical": {
+        "threshold": null,
+        "damage": ""
+      },
+      "damage": {
+        "parts": [],
+        "versatile": ""
+      },
+      "formula": "",
+      "save": {
+        "ability": "",
+        "dc": null,
+        "scaling": "spell"
+      },
+      "type": {
+        "value": "other",
+        "subtype": ""
+      },
+      "target": {
+        "value": null,
+        "width": null,
+        "units": "",
+        "type": "self"
+      }
+    },
+    "effects": [],
+    "flags": {},
+    "folder": null,
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    },
+    "_stats": {
+      "systemId": "dnd5e",
+      "systemVersion": "3.2.1",
+      "coreVersion": "12.315",
+      "createdTime": 1733760000000,
+      "modifiedTime": 1733760000000,
+      "lastModifiedBy": "foundry"
+    }
+  },
+  {
+    "_id": "scorching-ray",
+    "name": "Scorching Ray",
     "type": "spell",
     "img": "icons/magic/fire/projectile-magic-flame-burst.webp",
     "data": {
       "description": {
-        "value": "<p>Uma esfera brilhante de fogo voa do seu dedo para um ponto escolhido dentro do alcance e então explode com um estrondo ensurdecedor. Cada criatura em uma esfera de 6 metros de raio centrada nesse ponto deve fazer um teste de resistência de Destreza. Uma criatura sofre 8d6 de dano de fogo se falhar no teste, ou metade desse dano se obtiver sucesso.</p><p><strong>Classe:</strong> Wizard</p>",
+        "value": "<p>You create three rays of fire and hurl them at targets within range. You can hurl them at one target or several. Make a ranged spell attack for each ray. On a hit, the target takes 2d6 fire damage.</p>",
+        "chat": "",
+        "unidentified": ""
+      },
+      "source": "5etools",
+      "level": 2,
+      "school": "evocation",
+      "classes": {
+        "value": [
+          "sorcerer",
+          "wizard"
+        ],
+        "subclass": []
+      },
+      "components": {
+        "value": "VS",
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "ritual": false,
+        "concentration": false
+      },
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "preparation": {
+        "mode": "prepared",
+        "prepared": false
+      },
+      "scaling": {
+        "mode": "level",
+        "formula": "1"
+      },
+      "duration": {
+        "value": "",
+        "unit": "inst"
+      },
+      "range": {
+        "value": 120,
+        "long": null,
+        "units": "ft"
+      },
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": ""
+      },
+      "consume": {
+        "type": "",
+        "target": null,
+        "amount": null
+      },
+      "ability": "",
+      "actionType": "attack",
+      "attackBonus": "",
+      "chatFlavor": "",
+      "critical": {
+        "threshold": null,
+        "damage": ""
+      },
+      "damage": {
+        "parts": [
+          [
+            "2d6",
+            "fire"
+          ]
+        ],
+        "versatile": ""
+      },
+      "formula": "",
+      "save": {
+        "ability": "",
+        "dc": null,
+        "scaling": "spell"
+      },
+      "type": {
+        "value": "attack",
+        "subtype": ""
+      },
+      "target": {
+        "value": 3,
+        "width": null,
+        "units": "",
+        "type": "creature"
+      }
+    },
+    "effects": [],
+    "flags": {},
+    "folder": null,
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    },
+    "_stats": {
+      "systemId": "dnd5e",
+      "systemVersion": "3.2.1",
+      "coreVersion": "12.315",
+      "createdTime": 1733760000000,
+      "modifiedTime": 1733760000000,
+      "lastModifiedBy": "foundry"
+    }
+  },
+  {
+    "_id": "fireball",
+    "name": "Fireball",
+    "type": "spell",
+    "img": "icons/magic/fire/projectile-magic-flame-burst.webp",
+    "data": {
+      "description": {
+        "value": "<p>A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one.</p><p>The fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried.</p>",
         "chat": "",
         "unidentified": ""
       },
       "source": "5etools",
       "level": 3,
-      "school": "evo",
+      "school": "evocation",
       "classes": {
         "value": [
+          "sorcerer",
           "wizard"
         ],
         "subclass": []
@@ -145,7 +711,7 @@
         "concentration": false
       },
       "materials": {
-        "value": "uma pequena bola de guano de morcego e enxofre",
+        "value": "a tiny ball of bat guano and sulfur",
         "consumed": false,
         "cost": 0,
         "supply": 0
@@ -234,244 +800,23 @@
     }
   },
   {
-    "_id": "heal-cleric",
-    "name": "Heal (Cleric)",
+    "_id": "lightning-bolt",
+    "name": "Lightning Bolt",
     "type": "spell",
-    "img": "icons/magic/life/heart-cross-strong-green.webp",
+    "img": "icons/magic/lightning/bolt-forked-yellow.webp",
     "data": {
       "description": {
-        "value": "<p>Escolha uma criatura que você possa ver dentro do alcance. Uma onda de energia positiva se espalha por ela, fazendo com que recupere 70 pontos de vida. Este feitiço também fecha feridas, remove doenças e neutraliza venenos que estejam afetando a criatura alvo.</p><p><strong>Classe:</strong> Cleric</p>",
+        "value": "<p>A stroke of lightning forming a line 100 feet long and 5 feet wide blasts out from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 8d6 lightning damage on a failed save, or half as much damage on a successful one.</p><p>The lightning ignites flammable objects in the area that aren't being worn or carried.</p>",
         "chat": "",
         "unidentified": ""
       },
       "source": "5etools",
-      "level": 6,
-      "school": "evoc",
+      "level": 3,
+      "school": "evocation",
       "classes": {
         "value": [
-          "cleric"
-        ],
-        "subclass": []
-      },
-      "components": {
-        "value": "VS",
-        "verbal": true,
-        "somatic": true,
-        "material": false,
-        "ritual": false,
-        "concentration": false
-      },
-      "materials": {
-        "value": "",
-        "consumed": false,
-        "cost": 0,
-        "supply": 0
-      },
-      "preparation": {
-        "mode": "prepared",
-        "prepared": false
-      },
-      "scaling": {
-        "mode": "level",
-        "formula": "10"
-      },
-      "duration": {
-        "value": "",
-        "unit": "inst"
-      },
-      "range": {
-        "value": 60,
-        "long": null,
-        "units": "ft"
-      },
-      "uses": {
-        "value": null,
-        "max": "",
-        "per": null,
-        "recovery": ""
-      },
-      "consume": {
-        "type": "",
-        "target": null,
-        "amount": null
-      },
-      "ability": "",
-      "actionType": "heal",
-      "attackBonus": "",
-      "chatFlavor": "",
-      "critical": {
-        "threshold": null,
-        "damage": ""
-      },
-      "damage": {
-        "parts": [],
-        "versatile": ""
-      },
-      "formula": "",
-      "save": {
-        "ability": "",
-        "dc": null,
-        "scaling": "spell"
-      },
-      "type": {
-        "value": "heal",
-        "subtype": ""
-      },
-      "target": {
-        "value": 1,
-        "width": null,
-        "units": "",
-        "type": "creature"
-      },
-      "healing": {
-        "formula": "70",
-        "type": "healing"
-      }
-    },
-    "effects": [],
-    "flags": {},
-    "folder": null,
-    "sort": 0,
-    "ownership": {
-      "default": 0
-    },
-    "_stats": {
-      "systemId": "dnd5e",
-      "systemVersion": "3.2.1",
-      "coreVersion": "12.315",
-      "createdTime": 1733760000000,
-      "modifiedTime": 1733760000000,
-      "lastModifiedBy": "foundry"
-    }
-  },
-  {
-    "_id": "heal-druid",
-    "name": "Heal (Druid)",
-    "type": "spell",
-    "img": "icons/magic/life/heart-cross-strong-green.webp",
-    "data": {
-      "description": {
-        "value": "<p>Escolha uma criatura que você possa ver dentro do alcance. Uma onda de energia positiva se espalha por ela, fazendo com que recupere 70 pontos de vida. Este feitiço também fecha feridas, remove doenças e neutraliza venenos que estejam afetando a criatura alvo.</p><p><strong>Classe:</strong> Druid</p>",
-        "chat": "",
-        "unidentified": ""
-      },
-      "source": "5etools",
-      "level": 6,
-      "school": "evoc",
-      "classes": {
-        "value": [
-          "druid"
-        ],
-        "subclass": []
-      },
-      "components": {
-        "value": "VS",
-        "verbal": true,
-        "somatic": true,
-        "material": false,
-        "ritual": false,
-        "concentration": false
-      },
-      "materials": {
-        "value": "",
-        "consumed": false,
-        "cost": 0,
-        "supply": 0
-      },
-      "preparation": {
-        "mode": "prepared",
-        "prepared": false
-      },
-      "scaling": {
-        "mode": "level",
-        "formula": "10"
-      },
-      "duration": {
-        "value": "",
-        "unit": "inst"
-      },
-      "range": {
-        "value": 60,
-        "long": null,
-        "units": "ft"
-      },
-      "uses": {
-        "value": null,
-        "max": "",
-        "per": null,
-        "recovery": ""
-      },
-      "consume": {
-        "type": "",
-        "target": null,
-        "amount": null
-      },
-      "ability": "",
-      "actionType": "heal",
-      "attackBonus": "",
-      "chatFlavor": "",
-      "critical": {
-        "threshold": null,
-        "damage": ""
-      },
-      "damage": {
-        "parts": [],
-        "versatile": ""
-      },
-      "formula": "",
-      "save": {
-        "ability": "",
-        "dc": null,
-        "scaling": "spell"
-      },
-      "type": {
-        "value": "heal",
-        "subtype": ""
-      },
-      "target": {
-        "value": 1,
-        "width": null,
-        "units": "",
-        "type": "creature"
-      },
-      "healing": {
-        "formula": "70",
-        "type": "healing"
-      }
-    },
-    "effects": [],
-    "flags": {},
-    "folder": null,
-    "sort": 0,
-    "ownership": {
-      "default": 0
-    },
-    "_stats": {
-      "systemId": "dnd5e",
-      "systemVersion": "3.2.1",
-      "coreVersion": "12.315",
-      "createdTime": 1733760000000,
-      "modifiedTime": 1733760000000,
-      "lastModifiedBy": "foundry"
-    }
-  },
-  {
-    "_id": "bless-cleric",
-    "name": "Bless (Cleric)",
-    "type": "spell",
-    "img": "icons/magic/light/beam-strike-spirit.webp",
-    "data": {
-      "description": {
-        "value": "<p>Você abençoa até três criaturas escolhidas dentro do alcance. Sempre que um alvo fizer um teste de ataque ou teste de resistência antes que o feitiço termine, o alvo pode rolar um d4 e adicionar o número rolado ao teste.</p><p><strong>Classe:</strong> Cleric</p>",
-        "chat": "",
-        "unidentified": ""
-      },
-      "source": "5etools",
-      "level": 1,
-      "school": "enchantment",
-      "classes": {
-        "value": [
-          "cleric"
+          "sorcerer",
+          "wizard"
         ],
         "subclass": []
       },
@@ -481,10 +826,10 @@
         "somatic": true,
         "material": true,
         "ritual": false,
-        "concentration": true
+        "concentration": false
       },
       "materials": {
-        "value": "uma pitada de água benta",
+        "value": "a bit of fur and a rod of amber, crystal, or glass",
         "consumed": false,
         "cost": 0,
         "supply": 0
@@ -495,16 +840,16 @@
       },
       "scaling": {
         "mode": "level",
-        "formula": "1"
+        "formula": "1d6"
       },
       "duration": {
-        "value": 1,
-        "unit": "min"
+        "value": "",
+        "unit": "inst"
       },
       "range": {
-        "value": 30,
+        "value": null,
         "long": null,
-        "units": "ft"
+        "units": "self"
       },
       "uses": {
         "value": null,
@@ -518,7 +863,7 @@
         "amount": null
       },
       "ability": "",
-      "actionType": "other",
+      "actionType": "save",
       "attackBonus": "",
       "chatFlavor": "",
       "critical": {
@@ -526,131 +871,34 @@
         "damage": ""
       },
       "damage": {
-        "parts": [],
-        "versatile": ""
-      },
-      "formula": "",
-      "save": {
-        "ability": "",
-        "dc": null,
-        "scaling": "spell"
-      },
-      "type": {
-        "value": "other",
-        "subtype": ""
-      },
-      "target": {
-        "value": 3,
-        "width": null,
-        "units": "",
-        "type": "creature"
-      }
-    },
-    "effects": [],
-    "flags": {},
-    "folder": null,
-    "sort": 0,
-    "ownership": {
-      "default": 0
-    },
-    "_stats": {
-      "systemId": "dnd5e",
-      "systemVersion": "3.2.1",
-      "coreVersion": "12.315",
-      "createdTime": 1733760000000,
-      "modifiedTime": 1733760000000,
-      "lastModifiedBy": "foundry"
-    }
-  },
-  {
-    "_id": "bless-paladin",
-    "name": "Bless (Paladin)",
-    "type": "spell",
-    "img": "icons/magic/light/beam-strike-spirit.webp",
-    "data": {
-      "description": {
-        "value": "<p>Você abençoa até três criaturas escolhidas dentro do alcance. Sempre que um alvo fizer um teste de ataque ou teste de resistência antes que o feitiço termine, o alvo pode rolar um d4 e adicionar o número rolado ao teste.</p><p><strong>Classe:</strong> Paladin</p>",
-        "chat": "",
-        "unidentified": ""
-      },
-      "source": "5etools",
-      "level": 1,
-      "school": "enchantment",
-      "classes": {
-        "value": [
-          "paladin"
+        "parts": [
+          [
+            "8d6",
+            "lightning"
+          ]
         ],
-        "subclass": []
-      },
-      "components": {
-        "value": "VSM",
-        "verbal": true,
-        "somatic": true,
-        "material": true,
-        "ritual": false,
-        "concentration": true
-      },
-      "materials": {
-        "value": "uma pitada de água benta",
-        "consumed": false,
-        "cost": 0,
-        "supply": 0
-      },
-      "preparation": {
-        "mode": "prepared",
-        "prepared": false
-      },
-      "scaling": {
-        "mode": "level",
-        "formula": "1"
-      },
-      "duration": {
-        "value": 1,
-        "unit": "min"
-      },
-      "range": {
-        "value": 30,
-        "long": null,
-        "units": "ft"
-      },
-      "uses": {
-        "value": null,
-        "max": "",
-        "per": null,
-        "recovery": ""
-      },
-      "consume": {
-        "type": "",
-        "target": null,
-        "amount": null
-      },
-      "ability": "",
-      "actionType": "other",
-      "attackBonus": "",
-      "chatFlavor": "",
-      "critical": {
-        "threshold": null,
-        "damage": ""
-      },
-      "damage": {
-        "parts": [],
         "versatile": ""
       },
       "formula": "",
       "save": {
-        "ability": "",
+        "ability": "dex",
         "dc": null,
         "scaling": "spell"
       },
       "type": {
-        "value": "other",
+        "value": "save",
         "subtype": ""
       },
       "target": {
-        "value": 3,
+        "value": null,
         "width": null,
         "units": "",
-        "type": "creature"
+        "type": "line"
+      },
+      "area": {
+        "value": 100,
+        "type": "line",
+        "units": "ft"
       }
     },
     "effects": [],

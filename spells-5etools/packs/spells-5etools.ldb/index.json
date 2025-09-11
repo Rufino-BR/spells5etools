@@ -4,7 +4,7 @@
     "name": "Fireball (Sorcerer)",
     "type": "spell",
     "img": "icons/magic/fire/projectile-magic-flame-burst.webp",
-    "system": {
+    "data": {
       "description": {
         "value": "<p>Uma esfera brilhante de fogo voa do seu dedo para um ponto escolhido dentro do alcance e então explode com um estrondo ensurdecedor. Cada criatura em uma esfera de 6 metros de raio centrada nesse ponto deve fazer um teste de resistência de Destreza. Uma criatura sofre 8d6 de dano de fogo se falhar no teste, ou metade desse dano se obtiver sucesso.</p><p><strong>Classe:</strong> Sorcerer</p>",
         "chat": "",
@@ -121,7 +121,7 @@
     "name": "Fireball (Wizard)",
     "type": "spell",
     "img": "icons/magic/fire/projectile-magic-flame-burst.webp",
-    "system": {
+    "data": {
       "description": {
         "value": "<p>Uma esfera brilhante de fogo voa do seu dedo para um ponto escolhido dentro do alcance e então explode com um estrondo ensurdecedor. Cada criatura em uma esfera de 6 metros de raio centrada nesse ponto deve fazer um teste de resistência de Destreza. Uma criatura sofre 8d6 de dano de fogo se falhar no teste, ou metade desse dano se obtiver sucesso.</p><p><strong>Classe:</strong> Wizard</p>",
         "chat": "",
@@ -238,7 +238,7 @@
     "name": "Heal (Cleric)",
     "type": "spell",
     "img": "icons/magic/life/heart-cross-strong-green.webp",
-    "system": {
+    "data": {
       "description": {
         "value": "<p>Escolha uma criatura que você possa ver dentro do alcance. Uma onda de energia positiva se espalha por ela, fazendo com que recupere 70 pontos de vida. Este feitiço também fecha feridas, remove doenças e neutraliza venenos que estejam afetando a criatura alvo.</p><p><strong>Classe:</strong> Cleric</p>",
         "chat": "",
@@ -349,7 +349,7 @@
     "name": "Heal (Druid)",
     "type": "spell",
     "img": "icons/magic/life/heart-cross-strong-green.webp",
-    "system": {
+    "data": {
       "description": {
         "value": "<p>Escolha uma criatura que você possa ver dentro do alcance. Uma onda de energia positiva se espalha por ela, fazendo com que recupere 70 pontos de vida. Este feitiço também fecha feridas, remove doenças e neutraliza venenos que estejam afetando a criatura alvo.</p><p><strong>Classe:</strong> Druid</p>",
         "chat": "",
@@ -460,7 +460,7 @@
     "name": "Bless (Cleric)",
     "type": "spell",
     "img": "icons/magic/light/beam-strike-spirit.webp",
-    "system": {
+    "data": {
       "description": {
         "value": "<p>Você abençoa até três criaturas escolhidas dentro do alcance. Sempre que um alvo fizer um teste de ataque ou teste de resistência antes que o feitiço termine, o alvo pode rolar um d4 e adicionar o número rolado ao teste.</p><p><strong>Classe:</strong> Cleric</p>",
         "chat": "",
@@ -567,7 +567,7 @@
     "name": "Bless (Paladin)",
     "type": "spell",
     "img": "icons/magic/light/beam-strike-spirit.webp",
-    "system": {
+    "data": {
       "description": {
         "value": "<p>Você abençoa até três criaturas escolhidas dentro do alcance. Sempre que um alvo fizer um teste de ataque ou teste de resistência antes que o feitiço termine, o alvo pode rolar um d4 e adicionar o número rolado ao teste.</p><p><strong>Classe:</strong> Paladin</p>",
         "chat": "",
